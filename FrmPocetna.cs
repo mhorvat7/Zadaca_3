@@ -10,19 +10,20 @@ using System.Windows.Forms;
 
 namespace Zadaca_3
 {
-    public partial class Login : Form
+    public partial class FrmPocetna : Form
     {
-        public Login()
+        public FrmPocetna()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnUnos_Click(object sender, EventArgs e)
         {
-
+            FrmUnosZahtjeva frmUnosZahtjeva = new FrmUnosZahtjeva();
+            frmUnosZahtjeva.ShowDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

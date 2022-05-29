@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadaca_3", "Zadaca_3.csproj", "{4261FFC2-7A6C-4DAC-8A3B-4EE52CA5BAB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pixel equipment", "Pixel equipment.csproj", "{4261FFC2-7A6C-4DAC-8A3B-4EE52CA5BAB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
