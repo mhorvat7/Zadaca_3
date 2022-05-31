@@ -35,13 +35,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBrProjekta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtVoditelj = new System.Windows.Forms.TextBox();
+            this.btnPodnesi = new System.Windows.Forms.Button();
+            this.btnOdustani = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,9 +50,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "UrBroj:";
+            this.label1.Text = "Urbroj:";
             // 
             // label2
             // 
@@ -95,7 +95,7 @@
             this.txtOpis.Location = new System.Drawing.Point(271, 123);
             this.txtOpis.MinimumSize = new System.Drawing.Size(271, 170);
             this.txtOpis.Name = "txtOpis";
-            this.txtOpis.Size = new System.Drawing.Size(379, 170);
+            this.txtOpis.Size = new System.Drawing.Size(379, 20);
             this.txtOpis.TabIndex = 5;
             // 
             // label4
@@ -108,12 +108,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Broj projekta:";
             // 
-            // textBox1
+            // txtBrProjekta
             // 
-            this.textBox1.Location = new System.Drawing.Point(271, 348);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(379, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtBrProjekta.Location = new System.Drawing.Point(271, 348);
+            this.txtBrProjekta.Name = "txtBrProjekta";
+            this.txtBrProjekta.Size = new System.Drawing.Size(379, 20);
+            this.txtBrProjekta.TabIndex = 7;
             // 
             // label5
             // 
@@ -125,12 +125,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Naziv projekta:";
             // 
-            // textBox2
+            // txtNaziv
             // 
-            this.textBox2.Location = new System.Drawing.Point(271, 409);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(379, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtNaziv.Location = new System.Drawing.Point(271, 409);
+            this.txtNaziv.Name = "txtNaziv";
+            this.txtNaziv.Size = new System.Drawing.Size(379, 20);
+            this.txtNaziv.TabIndex = 9;
             // 
             // label6
             // 
@@ -142,43 +142,45 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Voditelj/ica projekta:";
             // 
-            // textBox3
+            // txtVoditelj
             // 
-            this.textBox3.Location = new System.Drawing.Point(271, 465);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(379, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtVoditelj.Location = new System.Drawing.Point(271, 465);
+            this.txtVoditelj.Name = "txtVoditelj";
+            this.txtVoditelj.Size = new System.Drawing.Size(379, 20);
+            this.txtVoditelj.TabIndex = 11;
             // 
-            // button1
+            // btnPodnesi
             // 
-            this.button1.Location = new System.Drawing.Point(653, 518);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 51);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Podnesi zahtjev";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPodnesi.Location = new System.Drawing.Point(653, 518);
+            this.btnPodnesi.Name = "btnPodnesi";
+            this.btnPodnesi.Size = new System.Drawing.Size(125, 51);
+            this.btnPodnesi.TabIndex = 12;
+            this.btnPodnesi.Text = "Podnesi zahtjev";
+            this.btnPodnesi.UseVisualStyleBackColor = true;
+            this.btnPodnesi.Click += new System.EventHandler(this.btnPodnesi_Click);
             // 
-            // button2
+            // btnOdustani
             // 
-            this.button2.Location = new System.Drawing.Point(499, 518);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 51);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Odustani";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnOdustani.Location = new System.Drawing.Point(499, 518);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(125, 51);
+            this.btnOdustani.TabIndex = 13;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // FrmUnosZahtjeva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 581);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.btnOdustani);
+            this.Controls.Add(this.btnPodnesi);
+            this.Controls.Add(this.txtVoditelj);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBrProjekta);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.label3);
@@ -202,12 +204,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBrProjekta;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtVoditelj;
+        private System.Windows.Forms.Button btnPodnesi;
+        private System.Windows.Forms.Button btnOdustani;
     }
 }

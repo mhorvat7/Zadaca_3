@@ -30,10 +30,10 @@
         {
             this.btnUnos = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPopis = new System.Windows.Forms.DataGridView();
             this.btnStatus = new System.Windows.Forms.Button();
             this.btnUredivanje = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPopis)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUnos
@@ -55,14 +55,13 @@
             this.btnReport.Text = "Generiranje izvještaja";
             this.btnReport.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPopis
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(661, 492);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvPopis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPopis.Location = new System.Drawing.Point(17, 24);
+            this.dgvPopis.Name = "dgvPopis";
+            this.dgvPopis.Size = new System.Drawing.Size(661, 492);
+            this.dgvPopis.TabIndex = 2;
             // 
             // btnStatus
             // 
@@ -89,12 +88,12 @@
             this.ClientSize = new System.Drawing.Size(690, 710);
             this.Controls.Add(this.btnUredivanje);
             this.Controls.Add(this.btnStatus);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPopis);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnUnos);
             this.Name = "FrmPocetna";
             this.Text = "Popis zahtjeva za nabavu";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPopis)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -103,7 +102,7 @@
 
         private System.Windows.Forms.Button btnUnos;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPopis;
         private System.Windows.Forms.Button btnStatus;
         private System.Windows.Forms.Button btnUredivanje;
     }
