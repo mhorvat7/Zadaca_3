@@ -33,7 +33,6 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.txtImePrez = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtOpis = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBrProjekta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.txtVoditelj = new System.Windows.Forms.TextBox();
             this.btnPodnesi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
+            this.txtOpis = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(11, 75);
+            this.label2.Location = new System.Drawing.Point(11, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 13);
             this.label2.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             // txtImePrez
             // 
-            this.txtImePrez.Location = new System.Drawing.Point(271, 73);
+            this.txtImePrez.Location = new System.Drawing.Point(271, 128);
             this.txtImePrez.Name = "txtImePrez";
             this.txtImePrez.Size = new System.Drawing.Size(379, 20);
             this.txtImePrez.TabIndex = 3;
@@ -84,25 +84,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(11, 126);
+            this.label3.Location = new System.Drawing.Point(11, 198);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Opis predmeta nabave:";
             // 
-            // txtOpis
-            // 
-            this.txtOpis.Location = new System.Drawing.Point(271, 123);
-            this.txtOpis.MinimumSize = new System.Drawing.Size(271, 170);
-            this.txtOpis.Name = "txtOpis";
-            this.txtOpis.Size = new System.Drawing.Size(379, 20);
-            this.txtOpis.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(11, 355);
+            this.label4.Location = new System.Drawing.Point(12, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 6;
@@ -110,7 +102,7 @@
             // 
             // txtBrProjekta
             // 
-            this.txtBrProjekta.Location = new System.Drawing.Point(271, 348);
+            this.txtBrProjekta.Location = new System.Drawing.Point(271, 68);
             this.txtBrProjekta.Name = "txtBrProjekta";
             this.txtBrProjekta.Size = new System.Drawing.Size(379, 20);
             this.txtBrProjekta.TabIndex = 7;
@@ -169,11 +161,20 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
+            // txtOpis
+            // 
+            this.txtOpis.Location = new System.Drawing.Point(271, 198);
+            this.txtOpis.Name = "txtOpis";
+            this.txtOpis.Size = new System.Drawing.Size(379, 147);
+            this.txtOpis.TabIndex = 14;
+            this.txtOpis.Text = "";
+            // 
             // FrmUnosZahtjeva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 581);
+            this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnPodnesi);
             this.Controls.Add(this.txtVoditelj);
@@ -182,7 +183,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtBrProjekta);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtImePrez);
             this.Controls.Add(this.lblDate);
@@ -202,14 +202,14 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TextBox txtImePrez;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBrProjekta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtVoditelj;
         private System.Windows.Forms.Button btnPodnesi;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.RichTextBox txtOpis;
+        public System.Windows.Forms.TextBox txtBrProjekta;
     }
 }

@@ -48,6 +48,7 @@ namespace Zadaca_3.Repositories
             string lastName = reader["LastName"].ToString();
             string username = reader["Username"].ToString();
             string password = reader["Password"].ToString();
+            int status = int.Parse(reader["Status"].ToString());
             var zaposlenik = new Zaposlenik
             {
                 Id = id,
@@ -55,6 +56,7 @@ namespace Zadaca_3.Repositories
                 LastName = lastName,
                 Username = username,
                 Password = password,
+                Status = status,
             };
             return zaposlenik;
         }

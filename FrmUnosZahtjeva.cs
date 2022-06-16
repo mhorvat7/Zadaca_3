@@ -22,14 +22,16 @@ namespace Zadaca_3
         }
         private void btnPodnesi_Click(object sender, EventArgs e)
         {
-            Zahtjev zahtjev = new Zahtjev();
-            /*var zaposlenik = FrmLogin.LoggedZaposlenik;
-            zaposlenik.PodnesiZahtjev(zahtjev);*/
-            var unos = ZahtjevRepository.GetZahtjev(zahtjev);
-            if (unos != null)
+            Zahtjev zahtjev = new Zahtjev
             {
-                ZahtjevRepository.InsertZahtjev(zahtjev, this);
-            }
+                BrProjekta = int.Parse(txtBrProjekta.Text),
+                ImePrezime = txtImePrez.Text,
+                Opis = txtOpis.Text,
+                Naziv = txtNaziv.Text,
+                Voditelj = txtVoditelj.Text
+            };
+            ZahtjevRepository zahtjevUnos = new ZahtjevRepository();
+            zahtjevUnos.InsertZahtjev(zahtjev);
             Close();
         }
 

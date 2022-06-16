@@ -13,13 +13,14 @@ using Zadaca_3.Repositories;
 
 namespace Zadaca_3
 {
-    public partial class FrmPocetna : Form
+    public partial class FrmPocetnaCIP : Form
     {
-        public FrmPocetna()
+        public FrmPocetnaCIP()
         {
             InitializeComponent();
         }
-        private void btnUnos_Click(object sender, EventArgs e)
+
+        private void btnUnosCIP_Click(object sender, EventArgs e)
         {
             FrmUnosZahtjeva frmUnosZahtjeva = new FrmUnosZahtjeva();
             frmUnosZahtjeva.ShowDialog();
@@ -30,36 +31,35 @@ namespace Zadaca_3
             DB.SetConfiguration("mhorvat7_DB", "mhorvat7", "O8fBr=2#");
             DB.OpenConnection();
             var prikaz = ZahtjevRepository.GetZahtjev();
-            dgvPopis.DataSource = prikaz;
+            dgvPopisCIP.DataSource = prikaz;
             DB.CloseConnection();
         }
 
-        private void btnBrisi_Click(object sender, EventArgs e)
+        private void FrmPocetnaCIP_Load(object sender, EventArgs e)
         {
-            Zahtjev zahtjev = dgvPopis.CurrentRow.DataBoundItem as Zahtjev;
+            ShowZahtjev();
+        }
+
+        private void btnBrisiCIP_Click(object sender, EventArgs e)
+        {
+            Zahtjev zahtjev = dgvPopisCIP.CurrentRow.DataBoundItem as Zahtjev;
             ZahtjevRepository rep = new ZahtjevRepository();
             rep.DeleteZahtjev(zahtjev);
             ShowZahtjev();
         }
 
-        private void FrmPocetna_Load(object sender, EventArgs e)
-        {
-            ShowZahtjev();
-        }
-
-        private void btnTrazi_Click(object sender, EventArgs e)
+        private void btnTraziCIP_Click(object sender, EventArgs e)
         {
             FrmUnosZahtjeva frmUnosZahtjeva = new FrmUnosZahtjeva();
             if (!String.IsNullOrEmpty(frmUnosZahtjeva.txtBrProjekta.Text))
             {
-                if (ZahtjevRepository.GetZahtjev(int.Parse(frmUnosZahtjeva.txtBrProjekta.Text)) != null)
-                {
+                if(ZahtjevRepository.GetZahtjev(int.Parse(frmUnosZahtjeva.txtBrProjekta.Text)) != null){
                     Zahtjev zahtjevi = new Zahtjev();
                     DB.SetConfiguration("mhorvat7_DB", "mhorvat7", "O8fBr=2#");
                     DB.OpenConnection();
                     string sql = $"SELECT * FROM Zahtjev WHERE BrProjekta = {zahtjevi.BrProjekta}";
                     DataTable data = new DataTable();
-                    dgvPopis.DataSource = data;
+                    dgvPopisCIP.DataSource = data;
                 }
                 else
                 {

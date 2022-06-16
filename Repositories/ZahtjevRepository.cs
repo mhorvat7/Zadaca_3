@@ -10,12 +10,13 @@ namespace Zadaca_3.Repositories
 {
     public class ZahtjevRepository
     {
-        public static Zahtjev GetZahtjev(Zahtjev zahtjev)
+        public static Zahtjev GetZahtjev(int zahtjev)
         {
-            Zahtjev unos = null;
-            string sql = $"SELECT * FROM Zahtjev WHERE BrProjekta = {zahtjev.BrProjekta}";
+            Zahtjev zahtjevi = new Zahtjev();
             DB.SetConfiguration("mhorvat7_DB", "mhorvat7", "O8fBr=2#");
             DB.OpenConnection();
+            Zahtjev unos = null;
+            string sql = $"SELECT * FROM Zahtjev WHERE BrProjekta = {zahtjevi.BrProjekta}";
             var reader = DB.GetDataReader(sql);
             if (reader.HasRows)
             {
@@ -29,10 +30,10 @@ namespace Zadaca_3.Repositories
 
         public static List<Zahtjev> GetZahtjev()
         {
-            var zahtjevi = new List<Zahtjev>();
-            string sql = "SELECT * FROM Zahtjev";
             DB.SetConfiguration("mhorvat7_DB", "mhorvat7", "O8fBr=2#");
             DB.OpenConnection();
+            List<Zahtjev> zahtjevi = new List<Zahtjev>();
+            string sql = "SELECT * FROM Zahtjev";
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
             {
@@ -64,21 +65,23 @@ namespace Zadaca_3.Repositories
             return zahtjev;
         }
 
-        public static void InsertZahtjev(Zahtjev zahtjev, FrmUnosZahtjeva zaposlenik)
+        public int InsertZahtjev(Zahtjev zahtjev)
         {
-            string sql = $"INSERT INTO Zahtjev (Urbroj, ImePrezime, Opis, BrProjekta, Naziv, Voditelj) VALUES (GETDATE(), {zahtjev.ImePrezime}, {zahtjev.Opis}, {zahtjev.BrProjekta}, {zahtjev.Naziv}, {zahtjev.Voditelj})";
             DB.SetConfiguration("mhorvat7_DB", "mhorvat7", "O8fBr=2#");
             DB.OpenConnection();
-            DB.ExecuteCommand(sql);
+            string sql = $"INSERT INTO Zahtjev (Urbroj, ImePrezime, Opis, BrProjekta, Naziv, Voditelj) VALUES (GETDATE(), '{zahtjev.ImePrezime}', '{zahtjev.Opis}', '{zahtjev.BrProjekta}', '{zahtjev.Naziv}', '{zahtjev.Voditelj}')";
+            int izvrsi = DB.ExecuteCommand(sql);
             DB.CloseConnection();
+            return izvrsi;
         }
-        /*public static void UpdateZahtjev(Zahtjev zahtjev, Zaposlenik zaposlenik)
+        public int DeleteZahtjev(Zahtjev zahtjev)
         {
-            string sql = $"UPDATE Zahtjev SET Urbroj=GETDATE(), ImePrezime={zahtjev.ImePrezime}, Opis={zahtjev.Opis}, Naziv={zahtjev.Naziv}, Voditelj={zahtjev.Voditelj} WHERE BrProjekta={zahtjev.BrProjekta}";
             DB.SetConfiguration("mhorvat7_DB", "mhorvat7", "O8fBr=2#");
             DB.OpenConnection();
-            DB.ExecuteCommand(sql);
+            string sql = "DELETE FROM Zahtjev Where BrProjekta = '" + zahtjev.BrProjekta + "'";
+            int izvrsi = DB.ExecuteCommand(sql);
             DB.CloseConnection();
-        }*/
+            return izvrsi;
+        }
     }
 }

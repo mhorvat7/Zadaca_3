@@ -43,11 +43,25 @@ namespace Zadaca_3
             else
             {
                 LoggedZaposlenik = ZaposlenikRepository.GetZaposlenik(TxtUsername.Text);
-                if (LoggedZaposlenik != null && LoggedZaposlenik.Password == TxtPassword.Text)
+                if (LoggedZaposlenik != null && LoggedZaposlenik.Password == TxtPassword.Text && LoggedZaposlenik.Status == 3)
                 {
                     this.Hide();
                     FrmPocetna frmPocetna = new FrmPocetna();
                     frmPocetna.ShowDialog();
+                    this.Close();
+                }
+                else if(LoggedZaposlenik != null && LoggedZaposlenik.Password == TxtPassword.Text && LoggedZaposlenik.Status == 2)
+                {
+                    this.Hide();
+                    FrmPocetnaCIP frmpocetnaCIP = new FrmPocetnaCIP();
+                    frmpocetnaCIP.ShowDialog();
+                    this.Close();
+                }
+                else if(LoggedZaposlenik != null && LoggedZaposlenik.Password == TxtPassword.Text && LoggedZaposlenik.Status == 1)
+                {
+                    this.Hide();
+                    FrmPocetnaOdobrenje frmpocetnaOdobrenje = new FrmPocetnaOdobrenje();
+                    frmpocetnaOdobrenje.ShowDialog();
                     this.Close();
                 }
                 else

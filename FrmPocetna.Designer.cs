@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.btnUnos = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
             this.dgvPopis = new System.Windows.Forms.DataGridView();
-            this.btnStatus = new System.Windows.Forms.Button();
-            this.btnUredivanje = new System.Windows.Forms.Button();
+            this.btnBrisi = new System.Windows.Forms.Button();
+            this.btnTrazi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopis)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,15 +45,6 @@
             this.btnUnos.UseVisualStyleBackColor = true;
             this.btnUnos.Click += new System.EventHandler(this.btnUnos_Click);
             // 
-            // btnReport
-            // 
-            this.btnReport.Location = new System.Drawing.Point(356, 639);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(144, 54);
-            this.btnReport.TabIndex = 1;
-            this.btnReport.Text = "Generiranje izvještaja";
-            this.btnReport.UseVisualStyleBackColor = true;
-            // 
             // dgvPopis
             // 
             this.dgvPopis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -63,36 +53,38 @@
             this.dgvPopis.Size = new System.Drawing.Size(661, 492);
             this.dgvPopis.TabIndex = 2;
             // 
-            // btnStatus
+            // btnBrisi
             // 
-            this.btnStatus.Location = new System.Drawing.Point(13, 639);
-            this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(137, 53);
-            this.btnStatus.TabIndex = 3;
-            this.btnStatus.Text = "Uredi status zahtjeva";
-            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnBrisi.Location = new System.Drawing.Point(17, 639);
+            this.btnBrisi.Name = "btnBrisi";
+            this.btnBrisi.Size = new System.Drawing.Size(147, 52);
+            this.btnBrisi.TabIndex = 6;
+            this.btnBrisi.Text = "Izbriši";
+            this.btnBrisi.UseVisualStyleBackColor = true;
+            this.btnBrisi.Click += new System.EventHandler(this.btnBrisi_Click);
             // 
-            // btnUredivanje
+            // btnTrazi
             // 
-            this.btnUredivanje.Location = new System.Drawing.Point(188, 639);
-            this.btnUredivanje.Name = "btnUredivanje";
-            this.btnUredivanje.Size = new System.Drawing.Size(137, 53);
-            this.btnUredivanje.TabIndex = 4;
-            this.btnUredivanje.Text = "Uredi zahtjev";
-            this.btnUredivanje.UseVisualStyleBackColor = true;
+            this.btnTrazi.Location = new System.Drawing.Point(532, 554);
+            this.btnTrazi.Name = "btnTrazi";
+            this.btnTrazi.Size = new System.Drawing.Size(146, 52);
+            this.btnTrazi.TabIndex = 7;
+            this.btnTrazi.Text = "Pretraživanje";
+            this.btnTrazi.UseVisualStyleBackColor = true;
+            this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
             // 
             // FrmPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 710);
-            this.Controls.Add(this.btnUredivanje);
-            this.Controls.Add(this.btnStatus);
+            this.Controls.Add(this.btnTrazi);
+            this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.dgvPopis);
-            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnUnos);
             this.Name = "FrmPocetna";
             this.Text = "Popis zahtjeva za nabavu";
+            this.Load += new System.EventHandler(this.FrmPocetna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopis)).EndInit();
             this.ResumeLayout(false);
 
@@ -101,9 +93,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnUnos;
-        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.DataGridView dgvPopis;
-        private System.Windows.Forms.Button btnStatus;
-        private System.Windows.Forms.Button btnUredivanje;
+        private System.Windows.Forms.Button btnBrisi;
+        private System.Windows.Forms.Button btnTrazi;
     }
 }

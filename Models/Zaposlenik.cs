@@ -11,17 +11,6 @@ namespace Zadaca_3.Models
     {
         public string Username { get; set; }
         public string Password { get; set; }
-       /* public void PodnesiZahtjev(Zahtjev zahtjev)
-        {
-            var unos = ZahtjevRepository.GetZahtjev(zahtjev);
-            if (unos != null)
-            {
-                ZahtjevRepository.InsertZahtjev(zahtjev, this);
-            }
-            else
-            {
-                ZahtjevRepository.UpdateZahtjev(zahtjev, this);
-            }
-        }*/
+        public int Status { get; set; }
     }
 }

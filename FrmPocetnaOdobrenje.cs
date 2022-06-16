@@ -13,16 +13,15 @@ using Zadaca_3.Repositories;
 
 namespace Zadaca_3
 {
-    public partial class FrmPocetna : Form
+    public partial class FrmPocetnaOdobrenje : Form
     {
-        public FrmPocetna()
+        public FrmPocetnaOdobrenje()
         {
             InitializeComponent();
         }
-        private void btnUnos_Click(object sender, EventArgs e)
+
+        private void FrmPocetnaOdobrenje_Load(object sender, EventArgs e)
         {
-            FrmUnosZahtjeva frmUnosZahtjeva = new FrmUnosZahtjeva();
-            frmUnosZahtjeva.ShowDialog();
             ShowZahtjev();
         }
         private void ShowZahtjev()
@@ -30,24 +29,26 @@ namespace Zadaca_3
             DB.SetConfiguration("mhorvat7_DB", "mhorvat7", "O8fBr=2#");
             DB.OpenConnection();
             var prikaz = ZahtjevRepository.GetZahtjev();
-            dgvPopis.DataSource = prikaz;
+            dgvPopisOdo.DataSource = prikaz;
             DB.CloseConnection();
         }
 
-        private void btnBrisi_Click(object sender, EventArgs e)
+        private void btnBrisiOdo_Click(object sender, EventArgs e)
         {
-            Zahtjev zahtjev = dgvPopis.CurrentRow.DataBoundItem as Zahtjev;
+            Zahtjev zahtjev = dgvPopisOdo.CurrentRow.DataBoundItem as Zahtjev;
             ZahtjevRepository rep = new ZahtjevRepository();
             rep.DeleteZahtjev(zahtjev);
             ShowZahtjev();
         }
 
-        private void FrmPocetna_Load(object sender, EventArgs e)
+        private void btnUnosOdo_Click(object sender, EventArgs e)
         {
+            FrmUnosZahtjeva frmUnosZahtjeva = new FrmUnosZahtjeva();
+            frmUnosZahtjeva.ShowDialog();
             ShowZahtjev();
         }
 
-        private void btnTrazi_Click(object sender, EventArgs e)
+        private void btnTraziOdo_Click(object sender, EventArgs e)
         {
             FrmUnosZahtjeva frmUnosZahtjeva = new FrmUnosZahtjeva();
             if (!String.IsNullOrEmpty(frmUnosZahtjeva.txtBrProjekta.Text))
@@ -59,7 +60,7 @@ namespace Zadaca_3
                     DB.OpenConnection();
                     string sql = $"SELECT * FROM Zahtjev WHERE BrProjekta = {zahtjevi.BrProjekta}";
                     DataTable data = new DataTable();
-                    dgvPopis.DataSource = data;
+                    dgvPopisOdo.DataSource = data;
                 }
                 else
                 {
